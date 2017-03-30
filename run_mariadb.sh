@@ -12,7 +12,8 @@ elif [[ "$unamestr" == 'Darwin' ]]; then
    home_dir='/Users/johnny_liao/docker_volume/maraidb'
 fi
 
-
+#echo $platform
+#exit
 
 docker run --restart=always -d --name cello_mariadb \
      	-p 3306:3306  \
@@ -21,4 +22,6 @@ docker run --restart=always -d --name cello_mariadb \
 	-e MYSQL_USER=abctest \
 	-e MYSQL_PASSWORD=test@5566 \
 	-v ${home_dir}:/var/lib/mysql \
-	mariadb:10.1
+	mariadb:10.1 \
+ || \
+docker start cello_mariadb
