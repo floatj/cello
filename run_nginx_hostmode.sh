@@ -11,7 +11,6 @@ docker run \
 --net=host \
 -d --name cello_nginx \
 -p 8088:80 \
---link cello_phpfpm:phpfpm \
 -v /tmp/laravel_project:/var/project \
 -v /tmp/nginx_default.conf:/etc/nginx/conf.d/default.conf \
 nginx:1.11.10
