@@ -1,12 +1,14 @@
 #!/bin/bash
-# host      path: /home/johnny/web/blog
-# container path: /var/porject
+
+source .env
+echo "web_path   = $WEB_PATH"
+echo "cello_path = $CELLO_PATH"
 
 docker run \
 --restart=always \
 -d --name cello_phpfpm \
--v /home/www/docker_web/viola:/var/project \
--v /root/docker/cello/www_default.conf:/usr/local/etc/php-fpm.d/www.conf \
+-v $WEB_PATH:/var/project \
+-v $CELLO_PATH/www_default.conf:/usr/local/etc/php-fpm.d/www.conf \
 -w /var/project \
 cello:php7.1-fpm
 

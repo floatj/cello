@@ -3,8 +3,8 @@
 # Author: floatj
 # Command format: Instruction [arguments / command] ...
 
-# php-fpm version 7.1.3
-FROM php:7.1.3-fpm
+# php-fpm version 7.1.5
+FROM php:7.1.5-fpm
 MAINTAINER floatj floatj@gmail.com
 RUN docker-php-ext-install -j$(nproc) pdo_mysql
 RUN docker-php-ext-install -j$(nproc) mbstring
