@@ -9,6 +9,7 @@ docker run \
 -d --name cello_phpfpm \
 -v $WEB_PATH:/var/project \
 -v $CELLO_PATH/www_default.conf:/usr/local/etc/php-fpm.d/www.conf \
+-v /var/laravel_storage/viola:/var/laravel_storage/viola \
 -w /var/project \
 cello:php7.1-fpm
 
